@@ -129,7 +129,7 @@ public class SilhouetteCoefficient {
 				}
 			}
 
-			//			printDistances(); //Uncomment to print the euclidean distances for each point
+			//printDistances(); //Uncomment to print the euclidean distances for each point
 
 			//Set the ai, bi and si values for each data instance
 			cohesion();
@@ -137,7 +137,7 @@ public class SilhouetteCoefficient {
 			silhouetteCoefficient();
 
 			//Uncomment to see the ai, bi and si for each data point instance
-			//			instances.forEach(System.out::println);
+			//instances.forEach(System.out::println);
 
 			for (Map.Entry<String, LinkedHashSet<DataInstance>> entry : clusterMap.entrySet()) {
 				double clusterAverage = 0.0;
@@ -172,85 +172,6 @@ public class SilhouetteCoefficient {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-}
-
-class DataInstance {
-
-	private final String cluster;
-	private final int instance;
-	private final double sepalWidth;
-	private final double petalWidth;
-	private final double sepalLength;
-	private final double petalLength;
-	private Double ai;
-	private Double bi;
-	private Double si;
-
-	public DataInstance(String cluster, int instance, double sepalLength, double sepalWidth, double petalLength, double petalWidth) {
-		this.cluster = cluster;
-		this.instance = instance;
-		this.sepalLength = sepalLength;
-		this.sepalWidth = sepalWidth;
-		this.petalLength = petalLength;
-		this.petalWidth = petalWidth;
-		this.ai = 0.0;
-		this.bi = 0.0;
-		this.si = 0.0;
-	}
-
-	public String getCluster() {
-		return cluster;
-	}
-
-	public int getInstance() {
-		return instance;
-	}
-
-	public Double getSepalWidth() {
-		return sepalWidth;
-	}
-
-	public Double getPetalWidth() {
-		return petalWidth;
-	}
-
-	public Double getSepalLength() {
-		return sepalLength;
-	}
-
-	public Double getPetalLength() {
-		return petalLength;
-	}
-
-	public Double getAi() {
-		return ai;
-	}
-
-	public void setAi(Double ai) {
-		this.ai = ai;
-	}
-
-	public Double getBi() {
-		return bi;
-	}
-
-	public void setBi(Double bi) {
-		this.bi = bi;
-	}
-
-	public Double getSi() {
-		return si;
-	}
-
-	public void setSi(Double si) {
-		this.si = si;
-	}
-
-	@Override
-	public String toString() {
-		return cluster + " Instance " + instance + "\nAI: " + ai + "\nBI: " + bi + "\nSI: " + si + "\n";
 	}
 
 }
